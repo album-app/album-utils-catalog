@@ -1,0 +1,16 @@
+album_api_version: 0.5.1
+args: []
+changelog: Migrate solution from cellcanvas catalog
+description: A FastAPI server to manage Album solutions.
+group: album
+license: MIT
+name: server
+solution_creators:
+- Kyle Harrington
+tags:
+- fastapi
+- album
+- server
+timestamp: '2024-09-06T21:32:11.426381'
+title: FastAPI Album Server
+version: 0.0.2
