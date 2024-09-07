@@ -1,0 +1,22 @@
+album_api_version: 0.5.1
+args:
+- default: true
+  description: If True, only display what would be uninstalled. If False, perform
+    the uninstalls.
+  name: dry_run
+  required: false
+  type: boolean
+changelog: Removes some solutions but does not explain why some cannot be uninstalled
+description: Finds all solutions with multiple versions installed and uninstalls all
+  but the newest version. Includes a dry run option.
+group: album-utils
+license: MIT
+name: cleanup-solutions
+solution_creators:
+- Kyle Harrington
+tags:
+- cleanup
+- album
+timestamp: '2024-09-06T21:29:00.465906'
+title: Album Solution Cleanup
+version: 0.1.4
