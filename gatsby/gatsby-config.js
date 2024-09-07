@@ -1,9 +1,9 @@
 module.exports = {
-  pathPrefix: `/catalogs/default`,
+  pathPrefix: `/album-utils-catalog/`,
   siteMetadata: {
-    title: 'album catalog',
-    subtitle: 'sharing favourite solutions across tools and domains',
-    catalog_url: 'https://gitlab.com/album-app/catalogs/templates/catalog-gatsby',
+    title: 'album utils catalog',
+    subtitle: 'sharing album utility solutions across tools and domains',
+    catalog_url: 'https://github.com/album-app/album-utils-catalog',
     menuLinks:[
       {
          name:'Catalog',
