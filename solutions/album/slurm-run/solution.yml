@@ -44,7 +44,7 @@ args:
   name: submit_job
   required: false
   type: boolean
-changelog: Initial version for running a single solution via slurm
+changelog: Better discovery of album env path
 description: Submit a single album solution to Slurm as a job with customizable resources.
 group: album
 license: MIT
@@ -55,6 +55,6 @@ tags:
 - slurm
 - album
 - job
-timestamp: '2024-09-30T16:30:54.217364'
+timestamp: '2024-09-30T16:50:29.386438'
 title: Run a solution on slurm the same way you run a solution
-version: 0.0.1
+version: 0.0.2

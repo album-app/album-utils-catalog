@@ -18,6 +18,7 @@ dependencies:
 """
 
 def run():
+    import os
     import subprocess
 
     # Fetch arguments
@@ -31,6 +32,11 @@ def run():
     slurm_module_commands = args.slurm_module_commands
     extra_args = args.extra_args
     submit_job = args.submit_job
+
+    # Discover the album environment path dynamically
+    home_dir = os.path.expanduser("~")
+    album_env_path = os.getenv("CONDA_PREFIX") or os.getenv("MAMBA_ROOT_PREFIX") or f"{home_dir}/micromamba/envs/album"
+    print(f"Using album environment at: {album_env_path}")
 
     # Construct the Slurm job script
     slurm_script = f"""#!/bin/bash
@@ -55,7 +61,7 @@ eval "$(micromamba shell hook --shell=bash)"
 
 export MAMBA_CACHE_DIR=$MYDATA/micromamba_cache/dir_$SLURM_JOB_ID
 
-micromamba_cmd="micromamba run -n album album run {album_solution_name} {extra_args}"
+micromamba_cmd="micromamba run -p {album_env_path} album run {album_solution_name} {extra_args}"
 echo "Executing: $micromamba_cmd"
 eval $micromamba_cmd
 """
@@ -76,7 +82,7 @@ eval $micromamba_cmd
 setup(
     group="album",
     name="slurm-run",
-    version="0.0.1",
+    version="0.0.2",
     title="Run a solution on slurm the same way you run a solution",
     description="Submit a single album solution to Slurm as a job with customizable resources.",
     solution_creators=["Kyle Harrington"],
