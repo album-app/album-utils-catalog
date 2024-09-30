@@ -1,0 +1,60 @@
+album_api_version: 0.5.1
+args:
+- description: Name of the album solution to run.
+  name: album_solution_name
+  required: true
+  type: string
+- description: Slurm partition to use.
+  name: slurm_partition
+  required: false
+  type: string
+- default: '24:00:00'
+  description: Time limit for the Slurm job (e.g., 01:00:00 for 1 hour).
+  name: slurm_time
+  required: false
+  type: string
+- default: 128G
+  description: Memory limit for the Slurm job (e.g., 128G for 128 GB).
+  name: slurm_memory
+  required: false
+  type: string
+- default: 24
+  description: Number of CPUs per Slurm task.
+  name: slurm_cpus_per_task
+  required: false
+  type: integer
+- default: 0
+  description: Number of GPUs per Slurm task.
+  name: slurm_gpus
+  required: false
+  type: integer
+- description: Slurm module commands to load necessary modules (e.g., module load
+    cuda/11.8.0\nmodule load cudnn/8.8.1.3_cuda11).
+  name: slurm_module_commands
+  required: false
+  type: string
+- default: ''
+  description: Additional arguments to pass to the album solution.
+  name: extra_args
+  required: false
+  type: string
+- default: true
+  description: Whether to submit the job to Slurm or just print the submission command
+    and script.
+  name: submit_job
+  required: false
+  type: boolean
+changelog: Initial version for running a single solution via slurm
+description: Submit a single album solution to Slurm as a job with customizable resources.
+group: album
+license: MIT
+name: slurm-run
+solution_creators:
+- Kyle Harrington
+tags:
+- slurm
+- album
+- job
+timestamp: '2024-09-30T16:30:54.217364'
+title: Run a solution on slurm the same way you run a solution
+version: 0.0.1
